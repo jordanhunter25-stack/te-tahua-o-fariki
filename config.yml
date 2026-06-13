@@ -1,0 +1,170 @@
+# ════════════════════════════════════════════════════════
+#  DECAP CMS — Configuration
+#  École Te Tahua o Fariki — Hao, Polynésie française
+# ════════════════════════════════════════════════════════
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: fr
+
+collections:
+
+  # ── ACTUALITÉS ──────────────────────────────────────
+  - name: "actualites"
+    label: "📰 Actualités"
+    label_singular: "Actualité"
+    folder: "content/actualites"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - label: "Catégorie"
+        name: "categorie"
+        widget: "select"
+        options:
+          - { label: "Vie de l'école", value: "vie-ecole" }
+          - { label: "Aire Marine Éducative", value: "ame" }
+          - { label: "Journal", value: "journal" }
+          - { label: "Projets pédagogiques", value: "projets" }
+          - { label: "Événement", value: "evenement" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Résumé court", name: "resume", widget: "text", hint: "2-3 phrases affichées sur la liste" }
+      - { label: "Contenu complet", name: "body", widget: "markdown" }
+      - { label: "Publié", name: "publie", widget: "boolean", default: true }
+
+  # ── PROJETS ─────────────────────────────────────────
+  - name: "projets"
+    label: "🌟 Projets"
+    label_singular: "Projet"
+    folder: "content/projets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom du projet", name: "title", widget: "string" }
+      - { label: "Classe(s)", name: "classes", widget: "string", hint: "Ex : CM1–CM2" }
+      - label: "Statut"
+        name: "statut"
+        widget: "select"
+        options:
+          - { label: "En cours", value: "en-cours" }
+          - { label: "Nouveau", value: "nouveau" }
+          - { label: "Annuel", value: "annuel" }
+          - { label: "Terminé", value: "termine" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Publié", name: "publie", widget: "boolean", default: true }
+
+  # ── AIRE MARINE ÉDUCATIVE ───────────────────────────
+  - name: "ame"
+    label: "🐬 Aire Marine Éducative"
+    label_singular: "Article AME"
+    folder: "content/ame"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Participants", name: "participants", widget: "string" }
+      - { label: "Résumé", name: "resume", widget: "text" }
+      - { label: "Compte-rendu", name: "body", widget: "markdown" }
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        required: false
+        field: { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Publié", name: "publie", widget: "boolean", default: true }
+
+  # ── AGENDA ──────────────────────────────────────────
+  - name: "agenda"
+    label: "📅 Agenda"
+    label_singular: "Événement"
+    folder: "content/agenda"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Heure", name: "heure", widget: "string", required: false, hint: "Ex : 17h30" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Conseil d'école", value: "conseil" }
+          - { label: "Sortie scolaire", value: "sortie" }
+          - { label: "Événement festif", value: "fete" }
+          - { label: "Rentrée / Vacances", value: "calendrier" }
+          - { label: "Réunion parents", value: "reunion" }
+          - { label: "Autre", value: "autre" }
+
+  # ── ÉQUIPE ──────────────────────────────────────────
+  - name: "equipe"
+    label: "👩‍🏫 Équipe"
+    label_singular: "Membre"
+    folder: "content/equipe"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom complet", name: "title", widget: "string" }
+      - { label: "Poste", name: "poste", widget: "string" }
+      - label: "Catégorie"
+        name: "categorie"
+        widget: "select"
+        options:
+          - { label: "Direction", value: "direction" }
+          - { label: "Enseignant(e)", value: "enseignant" }
+          - { label: "Personnel", value: "personnel" }
+          - { label: "Intervenant(e)", value: "intervenant" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Ordre d'affichage", name: "ordre", widget: "number", default: 1 }
+
+  # ── DOCUMENTS ───────────────────────────────────────
+  - name: "documents"
+    label: "📄 Documents"
+    label_singular: "Document"
+    folder: "content/documents"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - label: "Catégorie"
+        name: "categorie"
+        widget: "select"
+        options:
+          - { label: "Inscription", value: "inscription" }
+          - { label: "Aides & bourses", value: "aides" }
+          - { label: "Sécurité / Évacuation", value: "securite" }
+          - { label: "Règlement", value: "reglement" }
+          - { label: "Fournitures", value: "fournitures" }
+          - { label: "PV Conseil d'école", value: "pv-conseil" }
+          - { label: "Pédagogie", value: "pedagogie" }
+          - { label: "Autre", value: "autre" }
+      - { label: "Fichier PDF", name: "fichier", widget: "file" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Publié", name: "publie", widget: "boolean", default: true }
+
+  # ── PARAMÈTRES ──────────────────────────────────────
+  - name: "parametres"
+    label: "⚙️ Paramètres"
+    files:
+      - label: "Informations générales"
+        name: "general"
+        file: "content/parametres.json"
+        fields:
+          - { label: "Nom de l'école", name: "nom_ecole", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "E-mail", name: "email", widget: "string" }
+          - { label: "Adresse", name: "adresse", widget: "text" }
+          - { label: "Année scolaire", name: "annee_scolaire", widget: "string" }
+          - { label: "Mot de la directrice", name: "mot_directrice", widget: "markdown" }
+          - { label: "Nom de la directrice", name: "nom_directrice", widget: "string" }
+          - { label: "Photo de la directrice", name: "photo_directrice", widget: "image", required: false }

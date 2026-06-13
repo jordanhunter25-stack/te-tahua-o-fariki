@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te Tahua o Fariki — École Primaire de Hao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════ BARRE SUPÉRIEURE ══════════════════════════ -->
+  <div class="topbar">
+    <span>📞 40 XX XX XX</span>
+    <span>✉ ec-hao-fariki@education.pf</span>
+    <span>Hao, Tuamotu-Gambier — Polynésie française</span>
+    <a href="admin/index.html" class="topbar-admin">🔐 Admin</a>
+  </div>
+
+  <!-- ══════════════════════════ HEADER ══════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <img src="uploads/logo.png" alt="Logo Te Tahua o Fariki" class="logo-img" />
+        <div class="header-title">
+          <span class="ht-main">TE TAHUA O FARIKI</span>
+          <span class="ht-sub">École Primaire de Hao — Polynésie française</span>
+        </div>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#" class="nav-item active" data-section="accueil" onclick="goTo('accueil',this)">Accueil</a>
+      <a href="#" class="nav-item" data-section="ecole" onclick="goTo('ecole',this)">Notre école</a>
+      <a href="#" class="nav-item" data-section="administratif" onclick="goTo('administratif',this)">Administratif</a>
+      <a href="#" class="nav-item" data-section="pedagogie" onclick="goTo('pedagogie',this)">Pédagogie</a>
+      <a href="#" class="nav-item" data-section="ame" onclick="goTo('ame',this)">Aire Marine</a>
+      <a href="#" class="nav-item" data-section="actualites" onclick="goTo('actualites',this)">Actualités</a>
+      <a href="#" class="nav-item" data-section="contact" onclick="goTo('contact',this)">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════ CONTENU PRINCIPAL ══════════════════════════ -->
+  <main>
+
+    <!-- ─────────── ACCUEIL ─────────── -->
+    <section id="accueil" class="page active">
+
+      <div class="hero">
+        <div class="hero-left">
+          <img src="uploads/logo.png" alt="Blason Te Tahua o Fariki" class="hero-logo" />
+        </div>
+        <div class="hero-right">
+          <p class="hero-eyebrow">Bienvenue à l'école</p>
+          <h1 class="hero-title">Te Tahua<br>o Fariki</h1>
+          <p class="hero-tagline">Apprendre, grandir, s'épanouir<br>au cœur du lagon de Hao</p>
+          <div class="hero-chiffres">
+            <div class="chiffre"><strong>3</strong><span>Cycles</span></div>
+            <div class="chiffre-sep"></div>
+            <div class="chiffre"><strong>6</strong><span>Niveaux</span></div>
+            <div class="chiffre-sep"></div>
+            <div class="chiffre"><strong>1</strong><span>AME active</span></div>
+          </div>
+          <div class="hero-ctas">
+            <button class="btn-or" onclick="goTo('administratif', null)">Inscrire mon enfant</button>
+            <button class="btn-contour" onclick="goTo('ecole', null)">Découvrir l'école</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Raccourcis -->
+      <div class="raccourcis-band">
+        <button class="raccourci" onclick="goTo('ecole',null)">
+          <span class="rc-icon">👩‍🏫</span>
+          <span class="rc-label">Équipe &amp; photos</span>
+        </button>
+        <button class="raccourci" onclick="goTo('administratif',null)">
+          <span class="rc-icon">📝</span>
+          <span class="rc-label">Inscriptions</span>
+        </button>
+        <button class="raccourci" onclick="goTo('pedagogie',null)">
+          <span class="rc-icon">📚</span>
+          <span class="rc-label">Programmes</span>
+        </button>
+        <button class="raccourci" onclick="goTo('ame',null)">
+          <span class="rc-icon">🐬</span>
+          <span class="rc-label">Aire Marine</span>
+        </button>
+        <button class="raccourci" onclick="goTo('actualites',null)">
+          <span class="rc-icon">📰</span>
+          <span class="rc-label">Journal</span>
+        </button>
+        <button class="raccourci" onclick="goTo('contact',null)">
+          <span class="rc-icon">📍</span>
+          <span class="rc-label">Contact</span>
+        </button>
+      </div>
+
+      <!-- Mot de la directrice -->
+      <div class="mot-block container">
+        <div class="mot-deco">
+          <img src="uploads/logo.png" alt="" class="mot-logo-bg" aria-hidden="true"/>
+        </div>
+        <div class="mot-content">
+          <p class="mot-label">Mot de la directrice</p>
+          <blockquote class="mot-quote">
+            "Bienvenue sur le site de l'école primaire Te Tahua o Fariki. Notre école est un lieu d'apprentissage, de vie et de partage, ancrée dans le magnifique lagon de Hao. Nous œuvrons chaque jour pour que chaque enfant des Tuamotu puisse s'épanouir, apprendre et devenir citoyen du monde, tout en restant fier de ses racines polynésiennes."
+          </blockquote>
+          <p class="mot-sig">— La Directrice, École Te Tahua o Fariki</p>
+        </div>
+      </div>
+
+      <!-- Aperçu actualités -->
+      <div class="actu-preview container">
+        <div class="section-head">
+          <h2>Dernières actualités</h2>
+          <button class="voir-tout" onclick="goTo('actualites',null)">Tout voir →</button>
+        </div>
+        <div class="actu-grid" id="actu-preview-grid">
+          <article class="actu-card featured">
+            <div class="actu-meta"><span class="actu-cat">Journal</span><span class="actu-date">Juin 2026</span></div>
+            <h3>Relance du journal de l'école !</h3>
+            <p>Les élèves de CM1–CM2 relancent <em>Te Reo o Fariki</em>. Premier numéro en préparation&nbsp;!</p>
+          </article>
+          <article class="actu-card">
+            <div class="actu-meta"><span class="actu-cat">AME</span><span class="actu-date">Mars 2026</span></div>
+            <h3>Sortie snorkeling — relevés du récif</h3>
+            <p>Les élèves ont effectué leurs premiers relevés scientifiques sur le récif corallien de Hao.</p>
+          </article>
+          <article class="actu-card">
+            <div class="actu-meta"><span class="actu-cat">Vie de l'école</span><span class="actu-date">Avril 2026</span></div>
+            <h3>Journée de l'environnement marin</h3>
+            <p>Sensibilisation à la protection du lagon avec les partenaires de la mairie de Hao.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Agenda -->
+      <div class="agenda-strip container">
+        <h2>À venir</h2>
+        <div class="agenda-items" id="agenda-strip">
+          <div class="ag-item"><div class="ag-date"><strong>20</strong><span>juin</span></div><div class="ag-info"><strong>Conseil d'école</strong><span>17h30 — Salle de classe</span></div></div>
+          <div class="ag-item"><div class="ag-date"><strong>27</strong><span>juin</span></div><div class="ag-info"><strong>Fête de fin d'année</strong><span>Toute la journée</span></div></div>
+          <div class="ag-item"><div class="ag-date"><strong>1er</strong><span>sept.</span></div><div class="ag-info"><strong>Rentrée scolaire</strong><span>2026–2027</span></div></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ─────────── NOTRE ÉCOLE ─────────── -->
+    <section id="ecole" class="page hidden">
+      <div class="page-hero-band">
+        <h1>Notre école</h1>
+        <p>Équipe pédagogique, structure, sécurité et règlement</p>
+      </div>
+      <div class="container">
+        <div class="tabs-bar">
+          <button class="tab active" onclick="showTab('eq-equipe',this)">👩‍🏫 Équipe</button>
+          <button class="tab" onclick="showTab('eq-photos',this)">📷 Photos de classe</button>
+          <button class="tab" onclick="showTab('eq-structure',this)">🏗️ Locaux & plans</button>
+          <button class="tab" onclick="showTab('eq-evacuation',this)">⚠️ Évacuation</button>
+          <button class="tab" onclick="showTab('eq-reglement',this)">📜 Règlement</button>
+        </div>
+
+        <div id="eq-equipe" class="tab-pane active">
+          <h2 class="pane-title">L'équipe pédagogique</h2>
+          <div class="team-grid" id="team-grid">
+            <div class="team-card"><div class="tc-avatar">👩‍💼</div><div class="tc-info"><strong>Mme [Nom]</strong><span>Directrice</span></div></div>
+            <div class="team-card"><div class="tc-avatar">👩‍🏫</div><div class="tc-info"><strong>Mme [Nom]</strong><span>Enseignante CP–CE1</span></div></div>
+            <div class="team-card"><div class="tc-avatar">👨‍🏫</div><div class="tc-info"><strong>M. [Nom]</strong><span>Enseignant CE2–CM1</span></div></div>
+            <div class="team-card"><div class="tc-avatar">👩‍🏫</div><div class="tc-info"><strong>Mme [Nom]</strong><span>Enseignante CM2</span></div></div>
+            <div class="team-card"><div class="tc-avatar">🧑‍🤝‍🧑</div><div class="tc-info"><strong>M./Mme [Nom]</strong><span>ATSEM / Agent scolaire</span></div></div>
+          </div>
+          <p class="edit-note">✏️ Modifiable depuis l'interface administrateur.</p>
+        </div>
+
+        <div id="eq-photos" class="tab-pane hidden">
+          <h2 class="pane-title">Photos de classe — 2025–2026</h2>
+          <div class="photo-grid">
+            <div class="photo-card"><div class="photo-slot">📷</div><p>Classe CP–CE1</p></div>
+            <div class="photo-card"><div class="photo-slot">📷</div><p>Classe CE2–CM1</p></div>
+            <div class="photo-card"><div class="photo-slot">📷</div><p>Classe CM2</p></div>
+            <div class="photo-card"><div class="photo-slot">📷</div><p>Toute l'école</p></div>
+          </div>
+          <p class="edit-note">✏️ Photos ajoutées depuis l'espace administrateur.</p>
+        </div>
+
+        <div id="eq-structure" class="tab-pane hidden">
+          <h2 class="pane-title">Structure & locaux</h2>
+          <div class="two-col">
+            <div class="info-card"><h3>🏗️ Bâtiments</h3><ul><li>Bâtiment principal — salles de classe</li><li>Salle des maîtres</li><li>Bureau de la direction</li><li>Préau & cour de récréation</li><li>Sanitaires</li></ul></div>
+            <div class="info-card"><h3>📐 Plan de l'école</h3><div class="doc-link"><span>📄</span><div><strong>Plan général</strong><a href="#" class="dl">Télécharger (PDF)</a></div></div></div>
+          </div>
+        </div>
+
+        <div id="eq-evacuation" class="tab-pane hidden">
+          <h2 class="pane-title">Consignes d'évacuation</h2>
+          <div class="alert-band">⚠️ En cas d'évacuation, suivre les consignes affichées dans chaque salle et rejoindre le point de rassemblement dans la cour.</div>
+          <div class="doc-link"><span>📄</span><div><strong>Plan d'évacuation officiel</strong><a href="#" class="dl">Télécharger (PDF)</a></div></div>
+          <div class="doc-link"><span>📄</span><div><strong>Consignes tsunami — PPMS</strong><a href="#" class="dl">Télécharger (PDF)</a></div></div>
+        </div>
+
+        <div id="eq-reglement" class="tab-pane hidden">
+          <h2 class="pane-title">Règlement intérieur</h2>
+          <div class="doc-link"><span>📄</span><div><strong>Règlement intérieur 2025–2026</strong><a href="#" class="dl">Télécharger (PDF)</a></div></div>
+          <div class="doc-link"><span>📅</span><div><strong>Calendrier scolaire 2025–2026</strong><a href="#" class="dl">Télécharger (PDF)</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── ADMINISTRATIF ─────────── -->
+    <section id="administratif" class="page hidden">
+      <div class="page-hero-band">
+        <h1>Espace administratif</h1>
+        <p>Inscriptions, formulaires, aides et conseils d'école</p>
+      </div>
+      <div class="container">
+        <div class="tabs-bar">
+          <button class="tab active" onclick="showTab('ad-inscriptions',this)">📝 Inscriptions</button>
+          <button class="tab" onclick="showTab('ad-aides',this)">💰 Aides & bourses</button>
+          <button class="tab" onclick="showTab('ad-pv',this)">🗣️ Conseils d'école</button>
+          <button class="tab" onclick="showTab('ad-fournitures',this)">🎒 Fournitures</button>
+        </div>
+
+        <div id="ad-inscriptions" class="tab-pane active">
+          <h2 class="pane-title">Inscriptions & réinscriptions</h2>
+          <div class="form-grid">
+            <div class="form-card"><div class="fc-icon">📋</div><h3>Maternelle</h3><p>Enfants de 3 à 5 ans — PS, MS, GS.</p><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">📋</div><h3>Élémentaire</h3><p>CP, CE1, CE2, CM1, CM2.</p><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">🔄</div><h3>Réinscription</h3><p>Familles déjà inscrites — avant le 30 avril.</p><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">🚌</div><h3>Transport scolaire</h3><p>Demande de prise en charge.</p><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+          </div>
+          <div class="info-banner">📌 Formulaires à remettre au secrétariat ou par courrier.</div>
+        </div>
+
+        <div id="ad-aides" class="tab-pane hidden">
+          <h2 class="pane-title">Aides et bourses scolaires</h2>
+          <div class="form-grid">
+            <div class="form-card"><div class="fc-icon">🏫</div><h3>Aide fournitures</h3><p>Formulaire DGEE.</p><a href="#" class="btn-dl">⬇ Formulaire DGEE</a></div>
+            <div class="form-card"><div class="fc-icon">🍱</div><h3>Cantine</h3><p>Inscription et tarif réduit.</p><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">🏥</div><h3>Fiche médicale</h3><p>Fiche sanitaire + PAI.</p><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">🤝</div><h3>Fonds social</h3><p>Aide exceptionnelle — confidentielle.</p><a href="#" class="btn-dl">⬇ Formulaire</a></div>
+          </div>
+        </div>
+
+        <div id="ad-pv" class="tab-pane hidden">
+          <h2 class="pane-title">Conseils d'école — Procès-verbaux</h2>
+          <p class="pane-intro">Publication obligatoire des PV conformément à la réglementation.</p>
+          <div id="pv-list">
+            <div class="doc-link"><span>📄</span><div><strong>PV — Conseil d'école du [date]</strong><a href="#" class="dl">Télécharger</a></div></div>
+            <div class="doc-link"><span>📄</span><div><strong>PV — Conseil d'école du [date]</strong><a href="#" class="dl">Télécharger</a></div></div>
+          </div>
+          <p class="edit-note">✏️ Nouveaux PV ajoutés depuis l'espace admin.</p>
+        </div>
+
+        <div id="ad-fournitures" class="tab-pane hidden">
+          <h2 class="pane-title">Listes de fournitures</h2>
+          <div class="form-grid">
+            <div class="form-card"><div class="fc-icon">📦</div><h3>Cycle 1 — Maternelle</h3><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">📦</div><h3>Cycle 2 — CP · CE1 · CE2</h3><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+            <div class="form-card"><div class="fc-icon">📦</div><h3>Cycle 3 — CM1 · CM2</h3><a href="#" class="btn-dl">⬇ Télécharger</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── PÉDAGOGIE ─────────── -->
+    <section id="pedagogie" class="page hidden">
+      <div class="page-hero-band">
+        <h1>Espace pédagogique</h1>
+        <p>Programmes des 3 cycles, projets de l'année et LCP</p>
+      </div>
+      <div class="container">
+        <div class="tabs-bar">
+          <button class="tab active" onclick="showTab('pe-c1',this)">Cycle 1</button>
+          <button class="tab" onclick="showTab('pe-c2',this)">Cycle 2</button>
+          <button class="tab" onclick="showTab('pe-c3',this)">Cycle 3</button>
+          <button class="tab" onclick="showTab('pe-projets',this)">🌟 Projets</button>
+          <button class="tab" onclick="showTab('pe-lcp',this)">🌺 LCP & Reo</button>
+        </div>
+
+        <div id="pe-c1" class="tab-pane active">
+          <h2 class="pane-title">Cycle 1 — Apprentissages premiers <span class="cycle-badge">PS · MS · GS</span></h2>
+          <p class="pane-intro">Le Cycle 1 pose les bases du langage oral, de la motricité et de la vie en collectivité.</p>
+          <div class="matieres-grid">
+            <div class="mat-card lang"><h4>🗣️ Mobiliser le langage</h4><p>Oral et écrit — comprendre, s'exprimer, découvrir l'écrit</p></div>
+            <div class="mat-card art"><h4>🎨 Agir, s'exprimer</h4><p>Arts plastiques, musique, jeu dramatique, motricité</p></div>
+            <div class="mat-card sci"><h4>🔍 Explorer le monde</h4><p>Le temps, l'espace, les objets, le vivant, les nombres</p></div>
+          </div>
+        </div>
+
+        <div id="pe-c2" class="tab-pane hidden">
+          <h2 class="pane-title">Cycle 2 — Apprentissages fondamentaux <span class="cycle-badge">CP · CE1 · CE2</span></h2>
+          <p class="pane-intro">L'entrée dans les grands apprentissages : lire, écrire, compter.</p>
+          <div class="matieres-grid">
+            <div class="mat-card lang"><h4>📖 Français</h4><p>Lecture, écriture, vocabulaire, grammaire, orthographe</p></div>
+            <div class="mat-card math"><h4>➕ Mathématiques</h4><p>Nombres, calcul, géométrie, grandeurs et mesures</p></div>
+            <div class="mat-card sci"><h4>🌿 Questionner le monde</h4><p>Sciences, histoire-géographie, EMC</p></div>
+            <div class="mat-card art"><h4>🎵 Arts & EPS</h4><p>Éducation musicale, arts visuels, éducation physique</p></div>
+            <div class="mat-card lang"><h4>🌍 Anglais LV1</h4><p>Initiation à la langue anglaise</p></div>
+          </div>
+        </div>
+
+        <div id="pe-c3" class="tab-pane hidden">
+          <h2 class="pane-title">Cycle 3 — Consolidation <span class="cycle-badge">CM1 · CM2</span></h2>
+          <p class="pane-intro">Consolidation et approfondissement — préparation au collège.</p>
+          <div class="matieres-grid">
+            <div class="mat-card lang"><h4>📖 Français</h4><p>Œuvres littéraires, rédaction, étude de la langue</p></div>
+            <div class="mat-card math"><h4>➕ Mathématiques</h4><p>Fractions, proportionnalité, espace et géométrie</p></div>
+            <div class="mat-card sci"><h4>🔭 Sciences & techno</h4><p>Matière, vivant, objets techniques, environnement</p></div>
+            <div class="mat-card sci"><h4>🗺️ Histoire-Géographie</h4><p>Histoire de France et du monde, géographie, EMC</p></div>
+            <div class="mat-card art"><h4>🎨 Arts & EPS</h4><p>Arts plastiques, musique, sport</p></div>
+            <div class="mat-card lcp"><h4>🌍 LV1 & LCP</h4><p>Anglais + Langue et culture polynésienne</p></div>
+          </div>
+        </div>
+
+        <div id="pe-projets" class="tab-pane hidden">
+          <h2 class="pane-title">Projets de l'année 2025–2026</h2>
+          <div class="projets-list" id="projets-list">
+            <div class="projet-card"><div class="projet-status en-cours">En cours</div><h3>🐬 Aire Marine Éducative de Hao</h3><p>Les élèves participent à la gestion participative du lagon. Observations, relevés, sorties sur le récif.</p></div>
+            <div class="projet-card"><div class="projet-status en-cours">En cours</div><h3>📰 Journal de l'école — Te Reo o Fariki</h3><p>Relance du journal scolaire : les élèves rédigent, illustrent et publient les actualités de l'école.</p></div>
+            <div class="projet-card"><div class="projet-status nouveau">Nouveau</div><h3>🌺 Jardin pédagogique polynésien</h3><p>Création d'un jardin avec des plantes médicinales et comestibles des Tuamotu.</p></div>
+          </div>
+          <p class="edit-note">✏️ Projets mis à jour depuis l'espace admin.</p>
+        </div>
+
+        <div id="pe-lcp" class="tab-pane hidden">
+          <h2 class="pane-title">Langue et Culture Polynésiennes 🌺</h2>
+          <p class="pane-intro">À Hao, le <strong>reo paumotu</strong> fait partie du patrimoine vivant de l'île. L'enseignement des LCP est intégré à tous les cycles.</p>
+          <div class="matieres-grid">
+            <div class="mat-card lcp"><h4>🗣️ Reo paumotu</h4><p>Initiation et pratique de la langue des Tuamotu à tous les cycles</p></div>
+            <div class="mat-card lcp"><h4>🎵 Himene & danses</h4><p>Chants traditionnels, danses de la communauté de Hao</p></div>
+            <div class="mat-card lcp"><h4>🐚 Culture du lagon</h4><p>Connaissance du milieu marin, espèces locales, traditions</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── AIRE MARINE ─────────── -->
+    <section id="ame" class="page hidden">
+      <div class="page-hero-band ame-band">
+        <h1>Aire Marine Éducative</h1>
+        <p>Le lagon de Hao géré par les élèves de l'école</p>
+      </div>
+      <div class="container">
+        <div class="ame-intro-block">
+          <div class="ame-text">
+            <p>L'Aire Marine Éducative (AME) est un espace marin géré de manière participative par les élèves, sous la responsabilité des enseignants et avec le soutien de la communauté de Hao.</p>
+            <div class="ame-features">
+              <div class="ame-feat"><span>🐠</span><p>Observation et suivi des espèces marines</p></div>
+              <div class="ame-feat"><span>📊</span><p>Relevés scientifiques participatifs</p></div>
+              <div class="ame-feat"><span>🤝</span><p>Partenariats avec la mairie et les pêcheurs</p></div>
+              <div class="ame-feat"><span>📸</span><p>Sorties terrain et photographies du récif</p></div>
+            </div>
+          </div>
+          <div class="ame-badge-block">
+            <img src="uploads/logo.png" alt="Logo école" class="ame-logo"/>
+            <p>AME de Hao<br>Tuamotu-Gambier<br>2025–2026</p>
+          </div>
+        </div>
+
+        <h2 class="pane-title">Sorties & activités</h2>
+        <div class="projets-list" id="ame-articles">
+          <div class="projet-card"><div class="projet-status en-cours">Mars 2026</div><h3>🤿 Sortie snorkeling — Relevés du récif</h3><p>Les élèves de CM1–CM2 ont effectué des relevés sur la santé du récif corallien. Résultats en cours d'analyse.</p></div>
+          <div class="projet-card"><div class="projet-status en-cours">Janvier 2026</div><h3>📋 Inventaire des espèces</h3><p>Première liste des espèces observées dans la zone AME, présentée au conseil municipal de Hao.</p></div>
+        </div>
+        <p class="edit-note">✏️ Articles AME ajoutés depuis l'espace admin.</p>
+      </div>
+    </section>
+
+    <!-- ─────────── ACTUALITÉS ─────────── -->
+    <section id="actualites" class="page hidden">
+      <div class="page-hero-band">
+        <h1>Actualités & Journal</h1>
+        <p>Te Reo o Fariki — La voix de l'école primaire de Hao</p>
+      </div>
+      <div class="container">
+        <div class="journal-header">
+          <div><h2>🗞 Te Reo o Fariki</h2><p>Le journal des élèves de Te Tahua o Fariki</p></div>
+          <div class="journal-badge">N° 1 — à venir</div>
+        </div>
+        <div class="actu-grid large" id="actu-full-grid">
+          <article class="actu-card featured">
+            <div class="actu-meta"><span class="actu-cat">Journal</span><span class="actu-date">Juin 2026</span></div>
+            <h3>Relance du journal de l'école !</h3>
+            <p>Cette année, les élèves de cycle 3 relancent le journal de l'école avec le soutien de leurs enseignants. Le premier numéro est en préparation !</p>
+          </article>
+          <article class="actu-card">
+            <div class="actu-meta"><span class="actu-cat">AME</span><span class="actu-date">Mars 2026</span></div>
+            <h3>Sortie snorkeling</h3>
+            <p>Les élèves ont effectué leurs premiers relevés scientifiques sur le récif corallien de Hao.</p>
+          </article>
+          <article class="actu-card">
+            <div class="actu-meta"><span class="actu-cat">Vie de l'école</span><span class="actu-date">Avril 2026</span></div>
+            <h3>Semaine des mathématiques</h3>
+            <p>Ateliers et jeux mathématiques pendant une semaine entière.</p>
+          </article>
+          <article class="actu-card">
+            <div class="actu-meta"><span class="actu-cat">Culture</span><span class="actu-date">Mars 2026</span></div>
+            <h3>Exposition arts plastiques</h3>
+            <p>Les œuvres des élèves exposées dans la salle communale de Hao.</p>
+          </article>
+        </div>
+
+        <div class="agenda-full">
+          <h2>📅 Agenda</h2>
+          <div id="agenda-full-list">
+            <div class="ag-item"><div class="ag-date"><strong>20</strong><span>juin</span></div><div class="ag-info"><strong>Conseil d'école de fin d'année</strong><span>17h30</span></div></div>
+            <div class="ag-item"><div class="ag-date"><strong>27</strong><span>juin</span></div><div class="ag-info"><strong>Fête de fin d'année scolaire</strong><span>Toute la journée</span></div></div>
+            <div class="ag-item"><div class="ag-date"><strong>1er</strong><span>sept.</span></div><div class="ag-info"><strong>Rentrée 2026–2027</strong><span></span></div></div>
+          </div>
+        </div>
+        <p class="edit-note">✏️ Actualités et agenda mis à jour depuis l'espace admin.</p>
+      </div>
+    </section>
+
+    <!-- ─────────── CONTACT ─────────── -->
+    <section id="contact" class="page hidden">
+      <div class="page-hero-band">
+        <h1>Nous contacter</h1>
+        <p>L'équipe de Te Tahua o Fariki vous répond dans les 48h</p>
+      </div>
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h2>Coordonnées</h2>
+            <div class="ci-item"><span>📍</span><div><strong>Adresse</strong><p>École primaire Te Tahua o Fariki<br>Hao, Archipel des Tuamotu-Gambier<br>Polynésie française</p></div></div>
+            <div class="ci-item"><span>📞</span><div><strong>Téléphone</strong><p>40 XX XX XX</p></div></div>
+            <div class="ci-item"><span>✉</span><div><strong>E-mail</strong><p>ec-hao-fariki@education.pf</p></div></div>
+            <div class="ci-item"><span>🕐</span><div><strong>Horaires d'accueil</strong><p>Lun–Ven : 7h30 – 16h30</p></div></div>
+            <div class="ci-item"><span>🌐</span><div><strong>Circonscription</strong><p><a href="https://cir6.education.pf" target="_blank">cir6.education.pf</a></p></div></div>
+          </div>
+          <div class="contact-form">
+            <h2>Envoyer un message</h2>
+            <div class="field"><label>Nom</label><input type="text" id="cNom" placeholder="Prénom Nom"/></div>
+            <div class="field"><label>E-mail ou téléphone</label><input type="text" id="cEmail" placeholder="email ou numéro"/></div>
+            <div class="field"><label>Sujet</label>
+              <select id="cSujet"><option>Inscription</option><option>Information</option><option>Aide scolaire</option><option>AME</option><option>Autre</option></select>
+            </div>
+            <div class="field"><label>Message</label><textarea id="cMsg" rows="5" placeholder="Votre message..."></textarea></div>
+            <button class="btn-or" id="btnContact" onclick="sendContact()">Envoyer le message</button>
+            <p class="form-note">📌 Réponse sous 48h (jours scolaires).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="uploads/logo.png" alt="Logo" class="footer-logo"/>
+        <div>
+          <strong>TE TAHUA O FARIKI</strong>
+          <span>École primaire de Hao — Polynésie française</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.education.pf" target="_blank">DGEE Polynésie</a>
+        <a href="https://cir6.education.pf" target="_blank">Circonscription</a>
+        <a href="https://www.education.gouv.fr" target="_blank">Éducation nationale</a>
+      </div>
+      <div class="footer-end">
+        <p>© 2026 École Te Tahua o Fariki — Hao</p>
+        <a href="admin/index.html" class="footer-admin-link">🔐 Administration</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
