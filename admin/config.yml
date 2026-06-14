@@ -1,11 +1,92 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administration — Te Tahua o Fariki</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</head>
-<body>
-</body>
-</html>
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: fr
+
+collections:
+  - name: "actualites"
+    label: "Actualités"
+    folder: "content/actualites"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Catégorie", name: "categorie", widget: "select", options: ["Vie de l'école", "AME", "Journal", "Projets", "Événement"]}
+      - {label: "Résumé", name: "resume", widget: "text"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Publié", name: "publie", widget: "boolean", default: true}
+
+  - name: "agenda"
+    label: "Agenda"
+    folder: "content/agenda"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Heure", name: "heure", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "text", required: false}
+
+  - name: "projets"
+    label: "Projets"
+    folder: "content/projets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du projet", name: "title", widget: "string"}
+      - {label: "Classes", name: "classes", widget: "string"}
+      - {label: "Statut", name: "statut", widget: "select", options: ["en-cours", "nouveau", "annuel", "termine"]}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Publié", name: "publie", widget: "boolean", default: true}
+
+  - name: "ame"
+    label: "Aire Marine"
+    folder: "content/ame"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Participants", name: "participants", widget: "string"}
+      - {label: "Résumé", name: "resume", widget: "text"}
+      - {label: "Compte-rendu", name: "body", widget: "markdown"}
+      - {label: "Publié", name: "publie", widget: "boolean", default: true}
+
+  - name: "equipe"
+    label: "Équipe"
+    folder: "content/equipe"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom", name: "title", widget: "string"}
+      - {label: "Poste", name: "poste", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+
+  - name: "documents"
+    label: "Documents"
+    folder: "content/documents"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Catégorie", name: "categorie", widget: "select", options: ["inscription", "aides", "securite", "reglement", "fournitures", "pv-conseil"]}
+      - {label: "Fichier PDF", name: "fichier", widget: "file"}
+      - {label: "Publié", name: "publie", widget: "boolean", default: true}
+
+  - name: "parametres"
+    label: "Paramètres"
+    files:
+      - label: "Infos générales"
+        name: "general"
+        file: "content/parametres.json"
+        fields:
+          - {label: "Nom de l'école", name: "nom_ecole", widget: "string"}
+          - {label: "Téléphone", name: "telephone", widget: "string"}
+          - {label: "E-mail", name: "email", widget: "string"}
+          - {label: "Mot de la directrice", name: "mot_directrice", widget: "markdown"}
+          - {label: "Nom de la directrice", name: "nom_directrice", widget: "string"}
